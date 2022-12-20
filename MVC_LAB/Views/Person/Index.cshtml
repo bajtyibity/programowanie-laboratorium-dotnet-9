@@ -1,0 +1,35 @@
+﻿@model MVC_LAB.Models.Person.PersonViewModel
+@{
+    ViewData["Title"] = "Person Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Person</h1>
+    <a class="btn btn-primary" asp-area="" asp-controller="Person" asp-action="NewPerson" role="button">Create Person</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Gender</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model.Persons)
+            {
+                <tr>
+                    <th scope="row">@item.ID</th>
+                    <th scope="row">@item.Name</th>
+                    <th scope="row">@item.City</th>
+                    <th scope="row">@item.Gender</th>
+                    <th scope="row">
+                    <th scope="row">
+                    <a class="btn btn-primary" asp-area="" asp-controller="Person" asp-action="Editperson" asp-action="EditPerson" asp-route-id="@item.ID" role="button">Edytuj</a>
+                    </th>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
